@@ -1,0 +1,17 @@
+{
+  "name": "dev_dinder_backend",
+  "version": "1.0.0",
+  "description": "nodejs,javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev":"nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "Brajesh Singh",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
