@@ -6,3 +6,4 @@
 - Install nodemon and update script inside package.json
 - What are dependencies
 - Difference between caret and tilde (^ vs ~)
+- Order of the routes matter a lot
