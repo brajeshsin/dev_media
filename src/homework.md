@@ -7,3 +7,11 @@
 - What are dependencies
 - Difference between caret and tilde (^ vs ~)
 - Order of the routes matter a lot
+
+
+- What is middleware?
+- A middleware is a function or software layer that sits between the incoming request and the final response in an application — it  processes the request before it reaches the main logic (and/or modifies the response before it’s sent back).
+
+- Simple Definition:
+
+Middleware is like a checkpoint that handles tasks such as authentication, logging, validation, or modifying requests/responses — before your main code runs.
