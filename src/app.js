@@ -2,31 +2,34 @@ const express = require("express");
 
 const app = express();
 
-const {adminAuth,userAuth} = require("./middleware/Authmiddleware")
+app.use("/",(err,req,res,next) =>{
 
-app.use("/admin",adminAuth)
-app.get("/user/data",userAuth,(req,res) =>{
-    res.send("User data sent")
+    if(err){
+        res.status(500).send("Somthing went wrong")
+    }
+
 })
 
 
-app.get("/user/login",(req,res) =>{
-    res.send("Loggedin successfully")
-})
+app.get("/userData",(req,res) =>{
 
-app.get("/admin/getAllData",(req,res) =>{
+    try {
+          throw new Error("djffjdfb");
 
-    // First check if the request is authenticated.
-    //  Logic of fetching all data
+    res.send("User data sent");
+        
+    } catch (error) {
+        res.status(500).send("Somthing went wronggggg")
+        
+    }
 
-         res.send("All data send")
+    // Logic of DB call and get user data
+
+  
 });
 
-app.get("/admin/deleteUser",(req,res) =>{
-    // Logic to delete data
-    res.send("Data has been deleted successfully.")
 
-})
+
 
 app.listen(7000,() =>{
     console.log("Server is listining on port 3000..")
