@@ -4,9 +4,20 @@ const app = express();
 
 app.get("/admin/getAllData",(req,res) =>{
 
+    // First check if the request is authenticated.
     //  Logic of fetching all data
 
-    res.send("All data send")
+    const token = "xyz";
+    const isAdminAuthorized = token === "xyz";
+    if(isAdminAuthorized){
+         res.send("All data send")
+
+    }else{
+        res.status(401).send("Unauthorized request")
+    }
+
+
+   
 });
 
 app.get("/admin/deleteUser",(req,res) =>{
