@@ -1,38 +1,18 @@
 const express = require("express");
 
+ const connectDB = require("./config/database")
 const app = express();
 
-app.use("/",(err,req,res,next) =>{
-
-    if(err){
-        res.status(500).send("Somthing went wrong")
-    }
-
+ connectDB()
+ .then(() =>{
+    console.log("DB connected successfullly.")
+    app.listen(7000,() =>{
+    console.log("Server is listining on port 3000..")
+});
+}).catch(err =>{
+    console.log("Database can not be established")
 })
 
 
-app.get("/userData",(req,res) =>{
-
-    try {
-          throw new Error("djffjdfb");
-
-    res.send("User data sent");
-        
-    } catch (error) {
-        res.status(500).send("Somthing went wronggggg")
-        
-    }
-
-    // Logic of DB call and get user data
-
-  
-});
-
-
-
-
-app.listen(7000,() =>{
-    console.log("Server is listining on port 3000..")
-});
 
 
