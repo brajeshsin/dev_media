@@ -2,22 +2,24 @@ const express = require("express");
 
 const app = express();
 
+const {adminAuth,userAuth} = require("./middleware/Authmiddleware")
+
+app.use("/admin",adminAuth)
+app.get("/user/data",userAuth,(req,res) =>{
+    res.send("User data sent")
+})
+
+
+app.get("/user/login",(req,res) =>{
+    res.send("Loggedin successfully")
+})
+
 app.get("/admin/getAllData",(req,res) =>{
 
     // First check if the request is authenticated.
     //  Logic of fetching all data
 
-    const token = "xyz";
-    const isAdminAuthorized = token === "xyz";
-    if(isAdminAuthorized){
          res.send("All data send")
-
-    }else{
-        res.status(401).send("Unauthorized request")
-    }
-
-
-   
 });
 
 app.get("/admin/deleteUser",(req,res) =>{
